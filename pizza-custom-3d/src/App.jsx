@@ -35,6 +35,15 @@ export default function App() {
     }
   });
 
+    useEffect(() => {
+    try {
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adsbygoogle.push({});
+    } catch (error) {
+      console.error("Erro no AdSense:", error);
+    }
+  }, []);
+
   // ── Loading screen ──────────────────────────────────────────────────────────
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2500);
@@ -125,6 +134,15 @@ export default function App() {
                 />
               </Link>
             </div>
+           
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="ca-pub-9882665060686749"
+            data-ad-slot="1234567890"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          />
             <nav className="mainnav-container">
               <Link to="/">
                 <img src="/icons/Home.svg" alt="Home" width={24} height={24} />
